@@ -1,6 +1,5 @@
-<h1>Listing users</h1>
-
-<table>
+<h2 class="text-success" ><i><u>Listado de Usuarios</u></i></h2>
+<table class="table table-hover">
   <tr>
     <th>Alias</th>
     <th>Email</th>
@@ -15,9 +14,12 @@
     <td><%= user.alias %></td>
     <td><%= user.email %></td>
     <td><%= user.score %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <td><%= link_to icon('edit')+'Editar', edit_user_path(user), class:'btn btn-warning' %></td>
+    <td><%= link_to icon('remove')+'Eliminar', user, method: :delete, data: { confirm: 'Usted esta seguro de Eliminar dicho Cliente?' }, class:'btn btn-danger'  %></td>
+
+
+
   </tr>
 <% end %>
 </table>
