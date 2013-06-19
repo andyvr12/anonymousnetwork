@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anonymous Network</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="todo" align="center">
+  <div id="arriba">
+    <div class="hero-unit">
+      <h1>Anonymous Network</h1>
+      <p>Red Social An&oacute;nima</p>
+    </div>
+    
+  </div>
+
+  <!-- header -->
+
+
+  <div id="izquierda" >
+    <h5>Bienvenido a la Red Social que estabas esperando, donde podras compartir Fotos, Videos, Noticias, sin preocuparte por nada ni nadie, tambien podras Calificar y Comentar las publicaciones de otros Usuarios, SOLO TIENES QUE ELEGIR UN ALIAS, REGISTRARTE y empezar a DIVERTIRTE!</h5>
+    <h3> -------------------------</h3>
+    <p>
+    <button class="btn btn-warning">Condiciones de Uso</button></p>
+    <h6>1. Anonymous Network no se hace responsable de lo que publiques o digas en nuestra página, ya que el contenido del portal no es monitorizado. Sin embargo, si alguien nos advierte o nos damos cuenta de que has publicado algo que consideramos inapropiado, podremos eliminarlo de la página.</h6>
+    <h6>2. Anonymous Network no se hará responsable si publicas contenido que pertenece a otra persona y ésta se molesta (o incluso se pone en contacto con sus abogados). Recuerda que eres el único responsable del contenido que añades a la página.</h6>
+    <h6>3. Anonymous Network  no se hace responsable del uso o abuso que le den los usuarios al sitio.</h6>
+
+  </div><!-- columna izquierda -->
+
+  <div id="content">
+    <%= yield %>
+    <iframe width="450" height="360" src="http://www.youtube.com/embed/9bAGDOYdO1Q?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+  </div><!-- contenido -->
+
+
+  <div id="derecha">
+    <%= yield(:login) %>
+    <h2>Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+
+  </div><!-- columna derecha -->
+  
+  <div id="abajo">
+
+     <p class="text-center" ><b> &copy; <%= Time.now.year  %> Anonymous Network </b></p>
+      </div>
+
+
+  
+</div>
+
+
+
+</body>
+</html>
