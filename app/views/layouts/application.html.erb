@@ -24,6 +24,10 @@
 
 
   <div id="izquierda" >
+    <% if user_signed_in? %>
+      <%=  %>
+
+    <% else  %>
     <h5>Bienvenido a la Red Social que estabas esperando, donde podras compartir Fotos, Videos, Noticias, sin preocuparte por nada ni nadie, tambien podras Calificar y Comentar las publicaciones de otros Usuarios, SOLO TIENES QUE ELEGIR UN ALIAS, REGISTRARTE y empezar a DIVERTIRTE!</h5>
     <h3> -------------------------</h3>
     <p>
@@ -33,6 +37,7 @@
     <h6>1. Anonymous Network no se hace responsable de lo que publiques o digas en nuestra página, ya que el contenido del portal no es monitorizado. Sin embargo, si alguien nos advierte o nos damos cuenta de que has publicado algo que consideramos inapropiado, podremos eliminarlo de la página.</h6>
     <h6>2. Anonymous Network no se hará responsable si publicas contenido que pertenece a otra persona y ésta se molesta (o incluso se pone en contacto con sus abogados). Recuerda que eres el único responsable del contenido que añades a la página.</h6>
     <h6>3. Anonymous Network  no se hace responsable del uso o abuso que le den los usuarios al sitio.</h6>
+    <% end  %>
 
   </div><!-- columna izquierda -->
 
@@ -43,20 +48,22 @@
 
 
   <div id="derecha">
-<!--<% if user_signed_in? %>
-     <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %>
- <% else %>
-    <%= form_for("user", :url => user_session_path) do |f| %>
-      <div><%= f.label :email %><br />
-      <%= f.text_field :email %></div>
-      <div><%= f.label :password %><br />
-      <%= f.password_field :password %></div>
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-      <%= f.submit 'Sign in' %>
-      <%= link_to "Forgot your password?", new_password_path('user') %>
-    <% end %>
-<% end %>  -->
+    <% if user_signed_in? %>
+      <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= form_for("user", :url => user_session_path) do |f| %>
+      <div>
+        <%= f.label :email %><br />
+        <%= f.text_field :email %></div>
+      <div>
+        <%= f.label :password %><br />
+        <%= f.password_field :password %></div>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+        <%= f.submit 'Sign in' %>
+        <%= link_to "Forgot your password?", new_password_path('user') %>
+      <% end %>
+    <% end %> 
 
   </div><!-- columna derecha -->
   
