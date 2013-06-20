@@ -38,12 +38,12 @@
 
   <div id="content">
     <%= yield %>
-    <iframe width="450" height="360" src="http://www.youtube.com/embed/9bAGDOYdO1Q?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+    
   </div><!-- contenido -->
 
 
   <div id="derecha">
- <% if user_signed_in? %>
+<!--<% if user_signed_in? %>
      <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %>
  <% else %>
     <%= form_for("user", :url => user_session_path) do |f| %>
@@ -56,7 +56,7 @@
       <%= f.submit 'Sign in' %>
       <%= link_to "Forgot your password?", new_password_path('user') %>
     <% end %>
-<% end %>
+<% end %>  -->
 
   </div><!-- columna derecha -->
   

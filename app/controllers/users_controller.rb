@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => ['index', 'new'] 
+  #before_filter :authenticate_user!, :except => ['index', 'new'] 
 
   # GET /users
   # GET /users.json
@@ -12,14 +12,7 @@ class UsersController < ApplicationController
     end
   end
 
-   def listaPorAlias
-    @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
-  end
+  
 
   # GET /users/1
   # GET /users/1.json
