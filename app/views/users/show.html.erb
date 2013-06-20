@@ -22,5 +22,29 @@
 <p> Mandar Mail :</p>
 <p>Bandeja de Entrada: </p>
 
+<% content_for :izq do %>
+  <p id="notice"><%= notice %></p>
 
+  <h5>Bienvenido <%= current_user.alias %><h5>
+  <p><br>
+
+  <ul class="thumbnails">
+    <li class="span2">
+      <div class="thumbnail">
+        <%= image_tag current_user.profile_image.url(:thumb) %>
+      </div>
+    </li><br>
+  <p class="lead">
+    <b><u>Puntaje:</u></b>
+    <%= current_user.score %>
+  </p><br>
+
+
+
+
+  <%= link_to icon('edit')+'Editar Perfil', edit_user_registration_path,class:'btn-small btn-warning' %> <br>
+
+  <p> Mandar Mail</p>
+  <p>Bandeja de Entrada</p>
+<% end %>
 

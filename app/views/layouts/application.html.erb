@@ -25,7 +25,8 @@
 
   <div id="izquierda" >
     <% if user_signed_in? %>
-      <%=  %>
+    <%= yield :izq  %>
+      <%= link_to 'asd',current_user %>
 
     <% else  %>
     <h5>Bienvenido a la Red Social que estabas esperando, donde podras compartir Fotos, Videos, Noticias, sin preocuparte por nada ni nadie, tambien podras Calificar y Comentar las publicaciones de otros Usuarios, SOLO TIENES QUE ELEGIR UN ALIAS, REGISTRARTE y empezar a DIVERTIRTE!</h5>
