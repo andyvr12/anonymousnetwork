@@ -1,7 +1,6 @@
 @import "bootstrap";
 body {
 
-
   background-color: lightgray;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -9,16 +8,28 @@ body {
   line-height: 18px;
 }
 
+body,html
+{
+  height: 100%;
+}
+
 #todo
 {
   margin: 0 auto;
   width: 950px;
   background-color: white;
+  height: 100%;
 }
 
 #arriba
 {
+  margin-bottom: -30px;
+}
 
+#menu
+{
+  margin-top: 0px;
+  margin-bottom: -20px;
 }
 
 #izquierda
@@ -26,19 +37,19 @@ body {
   background-color: lightgray;
   width: 205px;
   float: left;
-  padding: 10px 10px 10px 10px;
+  padding: 0px 10px 0px 10px;
   text-size: 11;
-  height: auto;
-  margin-top: -30px;
   text-align: center;
+  margin-top: 0px;
 }
 
 #content
 {
   background-color: lightblue;
-  width: 500px;
   float: left;
-   margin-top: -30px;
+  margin-top: 0px;
+  width: 500px;
+  height: 100%;
 }
 
 #derecha
