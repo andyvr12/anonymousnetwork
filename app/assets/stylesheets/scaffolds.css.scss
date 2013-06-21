@@ -1,16 +1,14 @@
 @import "bootstrap";
 body {
-  background-color: #EC1E1E;
+  background-color: silver;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  background-image: url('anon.jpg');
+  background-repeat: repeat;
 }
 
-html
-{
-  background-color: #EC1E1E;
-}
 
 body,html
 {
