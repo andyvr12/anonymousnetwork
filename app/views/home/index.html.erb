@@ -37,7 +37,12 @@
     
     <p> Mandar Mail</p>
     <p>Bandeja de Entrada</p>
+
     <br>
+
+    <%= link_to 'Nuevo Post', new_publication_path,class:'btn-small btn-success' %>
+    <br><br>
+
     <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %>
   <% else  %>
     <br><br>

@@ -1,27 +1,32 @@
-<h1>Listing publications</h1>
+<h1>Publicaciones</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @publications.each do |publication| %>
-  <tr>
-    <td><%= publication.user_id %></td>
-    <td><%= publication.title %></td>
-    <td><%= publication.description %></td>
-    <td><%= link_to 'Show', publication %></td>
-    <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
-    <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  
+    <% @user.each do |user| %>
+     <% if publication.user_id == user.id %>
+
+      <p>Usuario : 
+      <%= user.alias %></p>
+      <br>
+      <% end %>
+
+      <p>Titulo:
+      <%= publication.title %></p>
+      <br>
+      <%= image_tag publication.image.url(:medium) %>
+      <br>
+      <p>Descripci&oacute;n :
+      <%= publication.description %></p>
+     
+    
+   
+    <% end %>
+  
+
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Publication', new_publication_path %>
+<br/>
+<br><hr>
+
