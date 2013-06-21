@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617222437) do
+ActiveRecord::Schema.define(:version => 20130621204320) do
 
   create_table "comments", :force => true do |t|
     t.integer  "publication_id"
@@ -34,8 +34,12 @@ ActiveRecord::Schema.define(:version => 20130617222437) do
     t.integer  "user_id"
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "scores", :force => true do |t|

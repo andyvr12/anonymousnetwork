@@ -1,11 +1,15 @@
 @import "bootstrap";
 body {
-
-  background-color: lightgray;
+  background-color: #EC1E1E;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+html
+{
+  background-color: #EC1E1E;
 }
 
 body,html
@@ -35,7 +39,7 @@ body,html
 #izquierda
 {
   background-color: lightgray;
-  width: 205px;
+  width: 230px;
   float: left;
   padding: 0px 10px 0px 10px;
   text-size: 11;
@@ -48,7 +52,7 @@ body,html
   background-color: lightblue;
   float: left;
   margin-top: 0px;
-  width: 500px;
+  width: 700px;
   height: 100%;
 }
 

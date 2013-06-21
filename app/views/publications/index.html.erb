@@ -3,13 +3,13 @@
 
 <% @publications.each do |publication| %>
   
-    <% @user.each do |user| %>
+    <% @users.each do |user| %>
      <% if publication.user_id == user.id %>
 
       <p>Usuario : 
       <%= user.alias %></p>
       <br>
-      <% end %>
+      
 
       <p>Titulo:
       <%= publication.title %></p>
@@ -18,7 +18,7 @@
       <br>
       <p>Descripci&oacute;n :
       <%= publication.description %></p>
-     
+     <% end %>
     
    
     <% end %>

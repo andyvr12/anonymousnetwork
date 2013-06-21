@@ -4,6 +4,8 @@ class PublicationsController < ApplicationController
   # GET /publications.json
   def index
     @publications = Publication.all
+    @users = User.all
+    @comments = Comment.all
 
     respond_to do |format|
       format.html # index.html.erb
