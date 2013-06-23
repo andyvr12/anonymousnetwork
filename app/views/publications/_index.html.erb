@@ -24,15 +24,34 @@
         <% end  %>
       </div>
       
-     <% end %>
-    
+      <h1>Comentarios</h1>
+
+      <% @comments.each do |comment| %>
+        <% if comment.publication_id == publication.id %>
+         
+          <% if comment.user_id == user.id %>
+
+          <p>Usuario : 
+          <%= user.alias %></p>
+          <br>
+          <p> 
+          <%= comment.content %></p>
+          <br>
+
+          
+          <% end %>
+        <% end %>
+      <% end %>
+       
    
+
     <% end %>
-  
+  <% end %>
 
 <% end %>
 
 
 <br/>
-<br><hr>
+<br>
+<hr>
 
