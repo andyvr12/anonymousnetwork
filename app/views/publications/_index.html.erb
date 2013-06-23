@@ -6,18 +6,24 @@
     <% @users.each do |user| %>
      <% if publication.user_id == user.id %>
 
-      <p>Usuario : 
-      <%= user.alias %></p>
+      
       <br>
       
 
-      <p>
-      <%= publication.title %></p>
+      <h3><b>
+      <%= publication.title %></b></h3>
       <br>
       <%= image_tag publication.image.url(:medium) %>
       <br>
-      <p>Descripci&oacute;n :
-      <%= publication.description %></p>
+      <div id="publicacion">
+        <br>
+        <p><%= publication.description %></p>
+        <p>Escrito por <%= user.alias %> el <%= publication.created_at %></p>
+        <% if publication.user_id == current_user.id %>
+          <%= link_to 'Editar', edit_publication_path(publication) %>
+        <% end  %>
+      </div>
+      
      <% end %>
     
    
