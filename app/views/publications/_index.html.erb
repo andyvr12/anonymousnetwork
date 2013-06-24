@@ -24,26 +24,21 @@
         <% end  %>
       </div>
       
-      <h1>Comentarios</h1>
+      <h3>Comentarios</h3>
+      <div id="comentario">
+        <% @comments.each do |comment| %>
+          <% if comment.publication_id == publication.id %>
 
-      <% @comments.each do |comment| %>
-        <% if comment.publication_id == publication.id %>
-         
-          <% if comment.user_id == user.id %>
-
-          <p>Usuario : 
-          <%= user.alias %></p>
-          <br>
-          <p> 
-          <%= comment.content %></p>
-          <br>
-
-          
+            <p> 
+            <%= comment.content %></p>
+            
+            <p>Escrito por <%= user.alias %> el <%= comment.created_at %></p>
+            <br>
+            <hr>
           <% end %>
         <% end %>
-      <% end %>
-       
-   
+      </div>
+      <%= link_to 'Comentar', new_comment_path  %>
 
     <% end %>
   <% end %>
