@@ -15,7 +15,7 @@ ProyectoFinal::Application.routes.draw do
 
   resources :users
 
-   match 'user_posts/:id' => 'publications#user_posts'
+  match 'user_posts/:id' => 'publications#user_posts'
 
 
   # The priority is based upon order of creation:

@@ -24,6 +24,17 @@ class PublicationsController < ApplicationController
     end
   end
 
+  def user_posts
+    @users = User.find(params[:id])
+    @publications  = Publication.find(:all, :order => 'created_at DESC')
+    @comments = Comment.all
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @publication }
+    end
+  end
+
   # GET /publications/new
   # GET /publications/new.json
   def new
