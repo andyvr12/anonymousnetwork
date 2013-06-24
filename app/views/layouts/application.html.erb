@@ -23,12 +23,12 @@
   <!-- header -->
 <% if user_signed_in?  %>
   <div id="menu">
-    <%= yield :menu  %>
+    <%= render 'shared/menu'  %>
   </div>
 <% end  %>
 
   <div id="izquierda">
-    <%= yield :izq  %>
+    <%= render 'shared/izquierda' %>
 
   </div><!-- columna izquierda -->
 

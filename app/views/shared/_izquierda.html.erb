@@ -1,0 +1,61 @@
+<%  if user_signed_in?  %>
+    <p id="notice"><%= notice %></p>
+
+    <h5>Bienvenido <%= link_to current_user.alias, current_user %> :D<h5>
+    <br>
+    <p>
+    <ul class="thumbnails">
+      <li class="span2">
+        <div class="thumbnail">
+          <%= image_tag current_user.profile_image.url(:thumb) %>
+        </div>
+      </li>
+      <br>
+    </ul>
+    </p>
+    <p class="lead">
+      <b><u>Puntaje:</u></b>
+      <%= current_user.score %>
+    </p>
+    <br>
+
+
+    <%= link_to icon('edit')+'Editar Perfil', edit_user_registration_path,class:'btn-small btn-warning' %> <br>
+
+    
+    <p> Mandar Mail</p>
+    <p>Bandeja de Entrada</p>
+
+    <br>
+
+    <%= link_to 'Nuevo Post', new_publication_path,class:'btn-small btn-success' %>
+    <br><br>
+
+    <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %>
+  <% else  %>
+    <br><br>
+    <%= form_for("user", :url => user_session_path) do |f| %>
+      <div>
+        <%= f.label :email %><br />
+        <%= f.text_field :email %></div>
+      <div>
+        <%= f.label :password %><br />
+        <%= f.password_field :password %></div>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+      <%= f.submit 'Sign in' %>
+      <br>
+      <%= link_to "Forgot your password?", new_password_path('user') %>
+      <br><br>
+      <%= link_to 'Nuevo Usuario', new_user_registration_path %>
+      <% end %>
+    <br>
+    <hr>
+    <br>
+    <button class="btn btn-warning">Condiciones de Uso</button>
+  
+
+    <h6>1. Anonymous Network no se hace responsable de lo que publiques o digas en nuestra página, ya que el contenido del portal no es monitorizado. Sin embargo, si alguien nos advierte o nos damos cuenta de que has publicado algo que consideramos inapropiado, podremos eliminarlo de la página.</h6>
+    <h6>2. Anonymous Network no se hará responsable si publicas contenido que pertenece a otra persona y ésta se molesta (o incluso se pone en contacto con sus abogados). Recuerda que eres el único responsable del contenido que añades a la página.</h6>
+    <h6>3. Anonymous Network  no se hace responsable del uso o abuso que le den los usuarios al sitio.</h6>
+  <% end %>

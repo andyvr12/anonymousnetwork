@@ -1,0 +1,51 @@
+<% if user_signed_in? %>
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+     
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+     
+          <!-- Be sure to leave the brand out there if you want it shown -->
+          <a class="brand" href="#">Project name</a>
+          <ul class="nav"  pull-right>
+            <li><%= link_to 'Home', root_path  %></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#">Mis Posts</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="#">Top 5</a></li>
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+                Secciones
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Humor</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Tecnolog&iacute;a</a></li>
+                <li><a href="#">Humor</a></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            
+          </ul>
+          <ul class="nav">
+            <li><%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %></li>
+            <li class="divider-vertical"></li>
+          </ul>
+          <li class="divider-vertical"></li>
+          <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+            <!-- .nav, .navbar-search, .navbar-form, etc -->
+          </div>
+     
+        </div>
+      </div>
+    </div>
+  <% else  %>
+  <% end  %>
