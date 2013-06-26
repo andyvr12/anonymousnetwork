@@ -25,6 +25,7 @@ class PublicationsController < ApplicationController
   end
 
   def user_posts
+    @users = User.all
     @comment = Comment.new
     if params[:id].nil?
       @publications  = Publication.find(:all, :conditions => {:user_id => current_user.id }, :order => 'created_at DESC')

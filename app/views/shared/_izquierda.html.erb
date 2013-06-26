@@ -1,7 +1,7 @@
 <%  if user_signed_in?  %>
     <p id="notice"><%= notice %></p>
 
-    <h5>Bienvenido <%= link_to current_user.alias, current_user %> :D<h5>
+    <h5>Bienvenido <%= link_to current_user.alias, current_user %> :)<h5>
     <br>
     <p>
     <ul class="thumbnails">
@@ -13,25 +13,31 @@
       <br>
     </ul>
     </p>
-    <p class="lead">
-      <b><u>Puntaje:</u></b>
-      <%= current_user.score %>
-    </p>
+    
     <br>
 
 
     <%= link_to icon('edit')+'Editar Perfil', edit_user_registration_path,class:'btn-small btn-warning' %> <br>
 
     
-    <p> Mandar Mail</p>
-    <p>Bandeja de Entrada</p>
+    <%= link_to icon('envelope')+'Mensajes', messages_path,class:'btn-small btn-info'  %>
 
     <br>
 
-    <%= link_to 'Nuevo Post', new_publication_path,class:'btn-small btn-success' %>
-    <br><br>
+    <%= link_to icon('camera')+'Nuevo Post', new_publication_path,class:'btn-small btn-success' %>
+    <br><br><br>
 
-    <%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %>
+    
+
+
+  <p class="lead"><b> Usuarios Registrados</b></p>
+
+      <% @users.each do |user| %>
+
+        <%= link_to user.alias, user_posts_url(:id => user.id)%><br>
+
+      <% end %>
+
   <% else  %>
     <br><br>
     <%= form_for("user", :url => user_session_path) do |f| %>
