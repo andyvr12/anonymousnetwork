@@ -25,9 +25,13 @@ class PublicationsController < ApplicationController
   end
 
   def user_posts
-    @users = User.find(params[:id])
-    @publications  = Publication.find(:all, :order => 'created_at DESC')
-    @comments = Comment.all
+    @comment = Comment.new
+    if params[:id].nil?
+      @publications  = Publication.find(:all, :conditions => {:user_id => current_user.id }, :order => 'created_at DESC')
+    else
+      @user = User.find(params[:id])
+      @publications  = Publication.find(:all, :conditions => {:user_id => params[:id].to_s}, :order => 'created_at DESC')
+    end
 
     respond_to do |format|
       format.html # show.html.erb

@@ -15,7 +15,8 @@
           <ul class="nav"  pull-right>
             <li><%= link_to 'Home', root_path  %></li>
             <li class="divider-vertical"></li>
-            <li><a href="#">Mis Posts</a></li>
+            <li><%= link_to 'Mis Posts', user_posts_path %></li>
+            <li><%= link_to 'Post del user id = 3', user_posts_url(:id => 3) %></li>
             <li class="divider-vertical"></li>
             <li><a href="#">Top 5</a></li>
             <li class="divider-vertical"></li>
